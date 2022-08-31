@@ -1,9 +1,7 @@
-import javax.swing.tree.TreeNode;
-
 /*
- * @lc app=leetcode.cn id=226 lang=java
+ * @lc app=leetcode.cn id=450 lang=java
  *
- * [226] 翻转二叉树
+ * [450] 删除二叉搜索树中的节点
  */
 
 // @lc code=start
@@ -23,13 +21,8 @@ import javax.swing.tree.TreeNode;
  * }
  */
 class Solution {
-    public TreeNode invertTree(TreeNode root) {
-        if (root == null) return null;
-        TreeNode l = invertTree(root.left);
-        TreeNode r = invertTree(root.right);
-        root.left = r;
-        root.right = l;
-        return root;
+    public TreeNode deleteNode(TreeNode root, int key) {
+
     }
 }
 // @lc code=end

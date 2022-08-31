@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 /*
  * @lc app=leetcode.cn id=101 lang=java
  *
@@ -22,15 +24,15 @@
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        if (root == null) return true;
-        return helper(root.left, root.right);
+        if(root == null) return true;
+        boolean res = helper(root.left, root.right);
+        return res;
     }
 
-    public boolean helper(TreeNode leftRoot, TreeNode rightRoot){
-        if (leftRoot == null && rightRoot == null) return true;
-        if (leftRoot == null || rightRoot == null) return false;
-        if (leftRoot.val != rightRoot.val) return false;
-        return helper(leftRoot.left, rightRoot.right) && helper(leftRoot.right, rightRoot.left) ;
+    public boolean helper(TreeNode left, TreeNode right){
+        if(left == null && right == null) return true;
+        if(left == null || right == null) return false;
+        return (left.val == right.val) && helper(left.right, right.left) && helper(left.left, right.right);
     }
 }
 // @lc code=end
